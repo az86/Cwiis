@@ -1,0 +1,69 @@
+﻿<Window x:Class="Cwiis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cwiis"
+        mc:Ignorable="d"
+        Name="win"
+        Title="Curtain wall installation inspection system" Height="350" Width="525">
+    <Grid>
+        <Grid.Resources>
+            <Style TargetType="Border">
+                <Setter Property="BorderThickness" Value="0.5,0.5,0,0"/>
+                <Setter Property="BorderBrush" Value="Black"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="5,0,5,0"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Center"/>
+            </Style>
+        </Grid.Resources>
+        <TabControl TabStripPlacement="Bottom" >
+            <TabItem Header="J03.玻璃幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J03" Title="J03-玻璃幕墙系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="J04.金属板幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J04" Title="J04 - 金属板幕墙系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="J05.石材幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J05" Title="J05- 石材幕墙系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="J06. 采光顶">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J06" Title="J06 - 采光顶、金属屋面系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="J07.单元幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J07" Title="J07 - 单元幕墙系统详细检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="J08.其它幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J08" Title="J08 - 其它类型幕墙系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="J09.配合交接">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J09" Title="J09 - 各幕墙系统交接位，与各专业交接位置检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem Header="J10.陶板幕墙">
+                <ScrollViewer HorizontalScrollBarVisibility="Visible">
+                    <local:Projects x:Name="J10" Title="J10- 陶板幕墙系统检查评分表_商业综合体（2017）"/>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
