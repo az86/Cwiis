@@ -29,10 +29,10 @@ namespace Cwiis
             J04.SetFile(@"Resource\J04.txt");
             J05.SetFile(@"Resource\J05.txt");
             J06.SetFile(@"Resource\J06.txt");
-            J07.SetFile(@"Resource\J07.txt");
+            //J07.SetFile(@"Resource\J07.txt");
             J08.SetFile(@"Resource\J08.txt");
             J09.SetFile(@"Resource\J09.txt");
-            J10.SetFile(@"Resource\J10.txt");
+           // J10.SetFile(@"Resource\J10.txt");
         }
     }
 }

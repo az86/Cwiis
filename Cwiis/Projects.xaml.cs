@@ -22,7 +22,16 @@ namespace Cwiis
     {
         List<Item> Items = new List<Item>();
 
-        public double SumScore { get { return Items.Sum(obj => SumScore); } }
+        public static DependencyProperty SumScoreProperty = DependencyProperty.Register("SumScore", typeof(double), typeof(Projects));
+
+        public double SumScore { get {
+                double sum = 0;
+                foreach (var item in Items)
+                {
+                    sum += item.Score;
+                }
+                return sum;
+            } set { SetValue(SumScoreProperty, value); } }
 
         public string Title
         {
@@ -91,7 +100,7 @@ namespace Cwiis
 
                 grid.AddCombobox(Items[i].Grade, gridRow, 13, Items[i], "Grade");
 
-                grid.AddTextblock(gridRow, 14, Items[i], "Score").TargetUpdated += Projects_TargetUpdated;
+                grid.AddTextblock(gridRow, 14, Items[i], "Score");
 
                 grid.AddTextblock(gridRow, 15, Items[i], "FullScore");
             }
@@ -102,12 +111,15 @@ namespace Cwiis
             border.SetValue(Grid.ColumnSpanProperty, grid.ColumnDefinitions.Count - 2);
             grid.Children.Add(border);
 
-            grid.AddTextblock("600", grid.RowDefinitions.Count - 1, 14);
+            var tb = new TextBlock();
+            tb.SetValue(Grid.RowProperty, grid.RowDefinitions.Count - 1);
+            tb.SetValue(Grid.ColumnProperty, 14);
+            var bind = new Binding("SumScore");
+            bind.ElementName = "uc";
+            bind.Mode = BindingMode.OneWay;
+            tb.SetBinding(TextBlock.TextProperty, bind);
+            grid.Children.Add(tb);
         }
 
-        private void Projects_TargetUpdated(object sender, DataTransferEventArgs e)
-        {
-            Console.WriteLine("1234");
-        }
     }
 }

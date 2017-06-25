@@ -11,7 +11,7 @@ namespace Cwiis
 {
     static class GridExtentions
     {
-        public static void AddTextblock(this Grid grid, string text, int row, int col, int rowSpan = 1)
+        public static TextBlock AddTextblock(this Grid grid, string text, int row, int col, int rowSpan = 1)
         {
             var tb = new Border();
             tb.Child = new TextBlock { Text = text };
@@ -20,6 +20,7 @@ namespace Cwiis
             if (rowSpan > 1)
                 tb.SetValue(Grid.RowSpanProperty, rowSpan);
             grid.Children.Add(tb);
+            return tb.Child as TextBlock;
         }
 
         public static TextBlock AddTextblock(this Grid grid, int row, int col, object bindingSource, string bindingPath, int rowSpan = 1)
